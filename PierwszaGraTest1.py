@@ -6,7 +6,7 @@ pygame.init()
 
 #Stwórz ekran gry
 screen = pygame.display.set_mode((800, 600))  # szerokość i wysokość
-
+cos sobie robie cos cos cos ckascka k
 #Nazwa gry
 pygame.display.set_caption("Testowa")
 
@@ -66,7 +66,7 @@ while running:    #Kiedy running jest True To gra działa cały czas
     elif graczX>=772:
         graczX=772
 
-    if graczY<=1:
+    if graczY<=0:
         graczY=0
     elif graczY >=536:
         graczY=536
@@ -78,4 +78,4 @@ while running:    #Kiedy running jest True To gra działa cały czas
     pygame.display.update() # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
 
 
-#coś chce dodać np że wiesz że jakies tam logowanie
+
