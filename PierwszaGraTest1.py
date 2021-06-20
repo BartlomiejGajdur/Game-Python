@@ -6,7 +6,6 @@ pygame.init()
 
 #Stwórz ekran gry
 screen = pygame.display.set_mode((800, 600))  # szerokość i wysokość
-cos sobie robie cos cos cos ckascka k
 #Nazwa gry
 pygame.display.set_caption("Testowa")
 
