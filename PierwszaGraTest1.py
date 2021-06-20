@@ -66,7 +66,7 @@ while running:    #Kiedy running jest True To gra działa cały czas
     elif graczX>=772:
         graczX=772
 
-    if graczY<=0:
+    if graczY<=1:
         graczY=0
     elif graczY >=536:
         graczY=536
@@ -76,3 +76,6 @@ while running:    #Kiedy running jest True To gra działa cały czas
 
     time.sleep(0.005)
     pygame.display.update() # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
+
+
+#coś chce dodać np że wiesz że jakies tam logowanie
