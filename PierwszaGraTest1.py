@@ -5,7 +5,7 @@ import time
 pygame.init()
 
 #Stwórz ekran gry
-screen = pygame.display.set_mode((800, 600))  # szerokość i wysokość
+screen = pygame.display.set_mode((900, 600))  # szerokość i wysokość
 #Nazwa gry
 pygame.display.set_caption("Testowa")
 
