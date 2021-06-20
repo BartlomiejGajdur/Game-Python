@@ -5,7 +5,7 @@ import time
 pygame.init()
 
 #Stwórz ekran gry
-screen = pygame.display.set_mode((900, 700))  # szerokość i wysokość
+screen = pygame.display.set_mode((800, 600))  # szerokość i wysokość
 #Nazwa gry
 pygame.display.set_caption("Testowa")
 
@@ -36,9 +36,9 @@ while running:    #Kiedy running jest True To gra działa cały czas
             running = False                #To running zmienia się na False i kończy działanie programu
         if wydarzenie.type == pygame.KEYDOWN:
             if wydarzenie.key == pygame.K_LEFT:
-                speedL = -2
+                speedL = -1
             if wydarzenie.key == pygame.K_RIGHT:
-                speedR = 2
+                speedR = 1
             if wydarzenie.key == pygame.K_UP:
                 speedU = -1
             if wydarzenie.key == pygame.K_DOWN:
