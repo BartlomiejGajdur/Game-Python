@@ -36,9 +36,9 @@ while running:    #Kiedy running jest True To gra działa cały czas
             running = False                #To running zmienia się na False i kończy działanie programu
         if wydarzenie.type == pygame.KEYDOWN:
             if wydarzenie.key == pygame.K_LEFT:
-                speedL = -1
+                speedL = -2
             if wydarzenie.key == pygame.K_RIGHT:
-                speedR = 1
+                speedR = 2
             if wydarzenie.key == pygame.K_UP:
                 speedU = -1
             if wydarzenie.key == pygame.K_DOWN:
