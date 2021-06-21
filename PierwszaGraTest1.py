@@ -81,10 +81,10 @@ while running:    #Kiedy running jest True To gra działa cały czas
  #Ogranicz obszar ruchu przecniwnika
     if przeciwnikX <= 0:
         speedE*=-1   #Jeśli dochodzi do prawej krawędzi zmiena speed na druga strone i przeciwnik wraca.obniza o 32 piksele w dół
-        przeciwnikY+= 32
+        przeciwnikY+= 20
     elif przeciwnikX >= 736:
         speedE*= -1
-        przeciwnikY+= 32
+        przeciwnikY+= 20
 
     przeciwnikX+=speedE
 
