@@ -61,14 +61,11 @@ while running:  # Kiedy running jest True To gra działa cały czas
     for wydarzenie in pygame.event.get():  # zmienna wydarzenie pobiera klik itp...
         if wydarzenie.type == pygame.QUIT:  # Jeżeli klikniemy q QUIT w okienku
             running = False  # To running zmienia się na False i kończy działanie programu
-
-
         if wydarzenie.type == pygame.KEYDOWN:
             if wydarzenie.key == pygame.K_SPACE:
                 strzalkaY=graczY
                 strzalkaX=graczX
                 strzalka(strzalkaX, strzalkaY)
-
         if wydarzenie.type == pygame.KEYDOWN:
             if wydarzenie.key == pygame.K_LEFT:
                 speedL = -1
@@ -123,7 +120,6 @@ while running:  # Kiedy running jest True To gra działa cały czas
         strzalkaY+=speedS
 
     if strzalkaY>=600 or strzalkaY<=0:
-        strzalkaY=-40
         spearState="ready"
     time.sleep(0.014)
     pygame.display.update()  # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
