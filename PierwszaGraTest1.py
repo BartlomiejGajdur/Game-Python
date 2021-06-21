@@ -59,7 +59,7 @@ while running:    #Kiedy running jest True To gra działa cały czas
             if wydarzenie.key == pygame.K_UP:
                 speedU = 0
             if wydarzenie.key == pygame.K_DOWN:
-                speedD = 1
+                speedD = 0
 
 
     print(graczX , graczY)
