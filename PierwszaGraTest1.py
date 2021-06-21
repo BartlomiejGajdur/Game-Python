@@ -35,8 +35,8 @@ spearState="ready" # ready/ throw
 # Dodanie przeciwnika
 przeciwnikimg = pygame.image.load("assets/przciwnik.png")
 przeciwnikX = random.randint(0, 736)
-przeciwnikY = 20
-speedE = 2
+przeciwnikY = 0
+speedE = random.randint(-6, 6)
 
 
 def gracz(x, y):  # x- pozycja pionowa y-pozycja pozioma
@@ -112,7 +112,7 @@ while running:  # Kiedy running jest True To gra działa cały czas
         speedE *= -1
         przeciwnikY += 25
 
-    przeciwnikX += speedE
+    przeciwnikX+= speedE
 
     # Strzał przeciwnika na spacji. zaczyna od lokalizacji gracza, przypisuje inna zmienna do lokalizacji gracza i potem idzie w góre np o 200 pixeli w pętli while np
 
@@ -122,5 +122,8 @@ while running:  # Kiedy running jest True To gra działa cały czas
         strzalka(strzalkaX,strzalkaY)
         strzalkaY+=speedS
 
+    if strzalkaY>=600 or strzalkaY<=0:
+        strzalkaY=-40
+        spearState="ready"
     time.sleep(0.014)
     pygame.display.update()  # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
