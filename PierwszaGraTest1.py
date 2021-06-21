@@ -81,14 +81,14 @@ while running:    #Kiedy running jest True To gra działa cały czas
  #Ogranicz obszar ruchu przecniwnika
     if przeciwnikX <= 0:
         speedE*=-1   #Jeśli dochodzi do prawej krawędzi zmiena speed na druga strone i przeciwnik wraca.obniza o 32 piksele w dół
-        przeciwnikY+= 32
+        przeciwnikY+= 28
     elif przeciwnikX >= 736:
         speedE*= -1
-        przeciwnikY+= 32
+        przeciwnikY+= 28
 
     przeciwnikX+=speedE
 
-
+#Strzał przeciwnika na spacji. zaczyna od lokalizacji gracza, przypisuje inna zmienna do lokalizacji gracza i potem idzie w góre np o 200 pixeli w pętli while np
 
 
     gracz(graczX, graczY)  # to musimy dać po screen.fill. Teraz najpierw rysuje ekran a potem gracza
