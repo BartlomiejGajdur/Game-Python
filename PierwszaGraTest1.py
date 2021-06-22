@@ -57,8 +57,8 @@ def strzalka(x, y):
 
 
 def is_Collision(przeciwnikX, przeciwnikY, strzalkaX, strzalkaY):
-    distance = math.sqrt((math.pow(przeciwnikX - strzalkaX, 2) + math.pow(przeciwnikY- strzalkaY, 2)))
-    if distance<86:
+    distance = math.sqrt((math.pow(przeciwnikX+26 - strzalkaX, 2) + math.pow(przeciwnikY+33- strzalkaY, 2)))
+    if distance<43:
         return True
     else:
         return False
@@ -125,7 +125,7 @@ while running:  # Kiedy running jest True To gra działa cały czas
 
     gracz(graczX, graczY)  # to musimy dać po screen.fill. Teraz najpierw rysuje ekran a potem gracza
     przeciwnik(przeciwnikX, przeciwnikY)
-    if spearState is "throw":
+    if spearState == "throw":
         strzalka(strzalkaX, strzalkaY)
         strzalkaY += speedS
 
