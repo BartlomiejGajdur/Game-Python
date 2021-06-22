@@ -5,6 +5,9 @@ import random
 import math
 import pygame.freetype
 
+#czas
+czas=0
+
 # inicjalizacja, rozpocznij program
 pygame.init()
 GAME_FONT= pygame.freetype.Font("assets/ChopinScript.otf",24)
@@ -12,6 +15,7 @@ score=0
 
 # Stwórz ekran gry
 screen = pygame.display.set_mode((800, 600))  # szerokość i wysokość
+
 # Nazwa gry
 pygame.display.set_caption("Testowa")
 
@@ -23,6 +27,7 @@ pygame.display.set_icon(ikona)
 graczimg = pygame.image.load("assets/Gracz.png")
 graczX = 400
 graczY = 500
+speedGracz=2
 speedL = 0
 speedR = 0
 speedU = 0
@@ -63,18 +68,30 @@ def is_Collision(przeciwnikX, przeciwnikY, strzalkaX, strzalkaY):
     else:
         return False
 
+def get_czas():
+    czas = pygame.time.get_ticks() / 1000
+    GAME_FONT.render_to(screen, (500, 560), ("czas: " + str(czas)), (0, 0, 0))
+    return czas
+
+
 
 def display_box(screen, message):
-
-  fontobject = pygame.font.Font(None,18)
-  pygame.draw.rect(screen, (0,0,0),
-                   ((screen.get_width() / 2) - 100,
+    "Print a message in a box in the middle of the screen"
+    fontobject = pygame.font.Font(None,64)    #rozmiar czcionki
+    pygame.draw.rect(screen, (0,0,0),
+                    ((screen.get_width() / 2) - 100,   #Gdzie ma zacząć rysować
                     (screen.get_height() / 2) - 10,
-                    200,20), 0)
+                    200,20))
+    screen = pygame.display.set_mode((800, 600))
 
+    if len(message) != 0:
+        screen.blit(fontobject.render(message, 1, (255,255,255)),
+        ((screen.get_width() / 2) - 300, (screen.get_height() / 2) - 10))
+    pygame.display.flip()
 
+end= True
 running = True  # Zmienna running true (czyli gra jest otwarta)
-while running:  # Kiedy running jest True To gra działa cały czas
+while running and end:  # Kiedy running jest True To gra działa cały czas
 
     screen.fill((125, 0, 255))  # R G B  Wypełnij zmienna screen ( czyli nasz program) dany kolor . RGB od 0--->255
 
@@ -88,13 +105,13 @@ while running:  # Kiedy running jest True To gra działa cały czas
                 strzalka(strzalkaX, strzalkaY)
         if wydarzenie.type == pygame.KEYDOWN:
             if wydarzenie.key == pygame.K_LEFT:
-                speedL = -1
+                speedL = -speedGracz
             if wydarzenie.key == pygame.K_RIGHT:
-                speedR = 1
+                speedR = speedGracz
             if wydarzenie.key == pygame.K_UP:
-                speedU = -1
+                speedU = -speedGracz
             if wydarzenie.key == pygame.K_DOWN:
-                speedD = 1
+                speedD = speedGracz
         if wydarzenie.type == pygame.KEYUP:
             if wydarzenie.key == pygame.K_LEFT:
                 speedL = 0
@@ -156,8 +173,15 @@ while running:  # Kiedy running jest True To gra działa cały czas
 
     GAME_FONT.render_to(screen,(40,560),("Wynik: "+ str(score)),(0,0,0))
 
-    display_box(screen,"awiesz")
-    # chcialbym zeby to bylo tylko w wpis gracza na ekran
+    czas = get_czas()
+    if czas > 20:
+        display_box(screen, ("Gratulacje, twój wynik to: " + str(score)))
+        czas = 0
+        przeciwnikX=-20
+        przeciwnikY=-20
+
+    print(czas)
 
     time.sleep(0.01)
     pygame.display.update()  # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
+print(graczX)
