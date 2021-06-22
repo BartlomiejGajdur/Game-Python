@@ -63,6 +63,16 @@ def is_Collision(przeciwnikX, przeciwnikY, strzalkaX, strzalkaY):
     else:
         return False
 
+
+def display_box(screen, message):
+
+  fontobject = pygame.font.Font(None,18)
+  pygame.draw.rect(screen, (0,0,0),
+                   ((screen.get_width() / 2) - 100,
+                    (screen.get_height() / 2) - 10,
+                    200,20), 0)
+
+
 running = True  # Zmienna running true (czyli gra jest otwarta)
 while running:  # Kiedy running jest True To gra działa cały czas
 
@@ -146,6 +156,8 @@ while running:  # Kiedy running jest True To gra działa cały czas
 
     GAME_FONT.render_to(screen,(40,560),("Wynik: "+ str(score)),(0,0,0))
 
+    display_box(screen,"awiesz")
+    # chcialbym zeby to bylo tylko w wpis gracza na ekran
 
     time.sleep(0.01)
     pygame.display.update()  # Co kazda klatke odswieża nam wyświetlacz # Dla pętli while jest wcięcie
